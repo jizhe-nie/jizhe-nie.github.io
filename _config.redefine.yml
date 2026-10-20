@@ -223,8 +223,8 @@ navbar:
     # About: 
     #   icon: fa-regular fa-user
     #   submenus:
-    #     Me: /about
-    #     Github: https://github.com/EvanNotFound/hexo-theme-redefine
+    #     Me: https://qianlong-nie.github.io
+    #     Github: https://github.com/jizhe-nie
     #     Blog: https://ohevan.com
     #     Friends: /friends
     # Links: 
