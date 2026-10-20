@@ -214,19 +214,17 @@ navbar:
     Home: 
       path: / 
       icon: fa-regular fa-house # can be empty
-    # Archives: 
-    #   path: /archives 
-    #   icon: fa-regular fa-archive # can be empty
+    Archives: 
+      path: /archives 
+      icon: fa-regular fa-archive # can be empty
     # Status: 
     #   path: https://status.ohevan.com/
     #   icon: fa-regular fa-chart-bar
-    # About: 
-    #   icon: fa-regular fa-user
-    #   submenus:
-    #     Me: https://qianlong-nie.github.io
-    #     Github: https://github.com/jizhe-nie
-    #     Blog: https://ohevan.com
-    #     Friends: /friends
+    About: 
+      icon: fa-regular fa-user
+      submenus:
+        Me: https://qianlong-nie.github.io
+        Github: https://github.com/jizhe-nie
     # Links: 
     #   icon: fa-regular fa-link
     #   submenus:
