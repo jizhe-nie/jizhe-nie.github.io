@@ -11,9 +11,9 @@
 # Docs: https://redefine-docs.ohevan.com/basic/info
 info:
   # Site title
-  title: Theme Redefine
+  title: Jizhe's Blog
   # Site subtitle
-  subtitle: Redefine Your Hexo Journey.
+  subtitle: ''
   # Author name
   author: The Redefine Team
   # Site URL
@@ -134,7 +134,7 @@ home_banner:
     light: /images/wallhaven-wqery6-light.webp # light mode
     dark: /images/wallhaven-wqery6-dark.webp # dark mode
   # Home banner title
-  title: Theme Redefine
+  title: Jizhe's Blog
   # Home banner subtitle
   subtitle:
     text: [] # subtitle text, array
