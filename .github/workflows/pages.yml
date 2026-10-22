@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "0 0 * * *" # 每天 UTC 0 点（北京时间 8 点）重建，刷新贡献日历
+  workflow_dispatch: # 允许在 Actions 页面手动触发
 
 jobs:
   build:
@@ -16,6 +19,8 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Refresh GitHub contributions
+        run: node tools/contributions.mjs ${{ github.repository_owner }}
       - name: Build
         run: npm run build
       - uses: actions/upload-pages-artifact@v3
