@@ -13,11 +13,11 @@ info:
   # Site title
   title: Jizhe's Blog
   # Site subtitle
-  subtitle: ''
+  subtitle: 学习与项目开发记录
   # Author name
   author: Jizhe Nie
   # Site URL
-  url: https://redefine.ohevan.com
+  url: https://jizhe-nie.github.io
 # BASIC INFORMATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -100,7 +100,7 @@ global:
   open_graph:
     enable: true
     image: /images/redefine-og.webp  # default og:image
-    description: Hexo Theme Redefine, Redefine Your Hexo Journey.
+    description: Jizhe Nie 的个人博客，记录学习与项目开发过程。
   # Google Analytics
   google_analytics:
     enable: false # Whether to enable Google Analytics
@@ -131,8 +131,8 @@ home_banner:
   style: fixed # static or fixed
   # Home banner image
   image: 
-    light: /images/wallhaven-wqery6-light.webp # light mode
-    dark: /images/wallhaven-wqery6-dark.webp # dark mode
+    light: /images/banner-poster.jpg # light mode
+    dark: /images/banner-poster.jpg # dark mode
   # Home banner title
   title: Jizhe's Blog
   # Home banner subtitle
@@ -354,7 +354,7 @@ articles:
 # Docs: https://redefine-docs.ohevan.com/posts/comment
 comment:
   # Whether to enable comment
-  enable: true
+  enable: false
   # Comment system
   system: waline # waline, gitalk, twikoo, giscus, utterances, artalk
   # System configuration
@@ -415,7 +415,7 @@ footer:
   # Icon in footer, write fontawesome icon code here
   icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'
   # The start time of the website, format: YYYY/MM/DD HH:mm:ss
-  start: 2022/8/17 11:45:14
+  start: 2026/10/20 00:00:00
   # Site statistics
   statistics: true # show site statistics or not (total articles, total words)
   # Footer message
