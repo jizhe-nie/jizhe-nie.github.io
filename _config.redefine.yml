@@ -13,9 +13,9 @@ info:
   # Site title
   title: Jizhe's Blog
   # Site subtitle
-  subtitle: 学习与项目开发记录
+  subtitle: "[[学习与项目开发记录|Learning and Project Notes]]"
   # Author name
-  author: Jizhe Nie
+  author: "[[聶濟哲|Jizhe Nie]]"
   # Site URL
   url: https://jizhe-nie.github.io
 # BASIC INFORMATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
@@ -85,7 +85,7 @@ global:
     site_uv: true # site unique visitor
     post_pv: true # post page view
   # Whether to enable single page experience (using swup). See https://swup.js.org/. similar to pjax
-  single_page: true
+  single_page: false
   # Whether to enable Preloader.
   preloader:
     enable: false
