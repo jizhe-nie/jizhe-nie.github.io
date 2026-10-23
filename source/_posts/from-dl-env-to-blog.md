@@ -1,6 +1,8 @@
 ---
 title: 从深度学习环境到个人博客上线：我的第一篇记录
 date: 2026-10-22 20:00:00
+post_lang: zh
+translation: from-dl-env-to-blog-en
 categories:
   - 开发笔记
 tags:
