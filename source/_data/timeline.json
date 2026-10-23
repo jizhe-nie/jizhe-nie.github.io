@@ -1,6 +1,86 @@
 {
- "generated": "2026-10-23T00:47:33.282Z",
+ "generated": "2026-10-23T01:04:53.028Z",
  "entries": [
+  {
+   "repo": "blog",
+   "hash": "256a7c38b7af1ee4e9178bbf749002f4181a50d5",
+   "short": "256a7c3",
+   "date": "2026-10-23T09:04:51+08:00",
+   "subject": "站点标题中文改为濟哲的博客，并生成 posts.json 文章列表",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/256a7c38b7af1ee4e9178bbf749002f4181a50d5",
+   "files": [
+    {
+     "s": "M",
+     "p": "_config.redefine.yml"
+    },
+    {
+     "s": "A",
+     "p": "scripts/posts-json.js"
+    }
+   ],
+   "total": 2,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "1c16531677a67b387ea6d3490cde7660ca75d0b1",
+   "short": "1c16531",
+   "date": "2026-10-23T09:01:00+08:00",
+   "subject": "贡献日历：配色与 GitHub 主页一致，补上图例并修正文字对比度",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/1c16531677a67b387ea6d3490cde7660ca75d0b1",
+   "files": [
+    {
+     "s": "M",
+     "p": "scripts/contributions.js"
+    },
+    {
+     "s": "M",
+     "p": "source/_data/contributions.json"
+    }
+   ],
+   "total": 2,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "c03349b2ac24664112e9965b8b45f058be5f75c4",
+   "short": "c03349b",
+   "date": "2026-10-23T08:54:47+08:00",
+   "subject": "贡献日历：刷新数据，标注更新日期，并支持中英文切换",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/c03349b2ac24664112e9965b8b45f058be5f75c4",
+   "files": [
+    {
+     "s": "M",
+     "p": "scripts/contributions.js"
+    },
+    {
+     "s": "M",
+     "p": "source/_data/contributions.json"
+    }
+   ],
+   "total": 2,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "3ee54f081b1ed15a0ae8d60a81d0c5b63c741309",
+   "short": "3ee54f0",
+   "date": "2026-10-23T08:47:36+08:00",
+   "subject": "补充时间线说明：建站时间线页面本身",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/3ee54f081b1ed15a0ae8d60a81d0c5b63c741309",
+   "files": [
+    {
+     "s": "M",
+     "p": "source/_data/timeline-notes.yml"
+    },
+    {
+     "s": "M",
+     "p": "source/_data/timeline.json"
+    }
+   ],
+   "total": 2,
+   "hidden": 0
+  },
   {
    "repo": "blog",
    "hash": "f25e0db896b379af8eb81f655c0d63e2d42206a4",
