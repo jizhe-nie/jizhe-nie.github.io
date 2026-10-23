@@ -23,10 +23,28 @@ const REPOS = {
 const STATUS = { A: '+', M: '~', D: '−' };
 
 const pick = (v, lang) => (v && typeof v === 'object' ? v[lang] : v);
-const both = (v, fallbackZh) => bi(inline(pick(v, 'zh') || fallbackZh || ''), inline(pick(v, 'en') || pick(v, 'zh') || fallbackZh || ''));
+const both = (v, fallback) => {
+  const zh = pick(v, 'zh');
+  const en = pick(v, 'en');
+  return bi(inline(zh || en || fallback || ''), inline(en || zh || fallback || ''));
+};
+
+// 说明有两种写法：键是提交的 7 位哈希；或者键是 post:文章文件名（不含 .md），
+// 它会对应到"新增了 source/_posts/文章文件名.md"的那次提交。后一种让发布工具能在
+// 提交文章的同一个提交里写好说明（那时还不知道提交的哈希）。
+const POST_KEY = /^post:(.+)$/;
+function noteFor(e, notes) {
+  if (notes[e.short]) return notes[e.short];
+  const added = new Set(e.files.filter((f) => f.s === 'A').map((f) => f.p));
+  for (const key of Object.keys(notes)) {
+    const m = POST_KEY.exec(key);
+    if (m && added.has(`source/_posts/${m[1]}.md`)) return notes[key];
+  }
+  return {};
+}
 
 function renderEntry(e, notes) {
-  const n = notes[e.short] || {};
+  const n = noteFor(e, notes);
   const tags = n.tags || [];
   const date = e.date.slice(0, 16).replace('T', ' ');
 
