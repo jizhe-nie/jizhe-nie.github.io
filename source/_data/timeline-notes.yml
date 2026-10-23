@@ -142,3 +142,12 @@
   note:
     zh: "以脸为中心裁成 1200x1200 的正方形，再缩到 600x600，只有 26KB。卡片里是圆形显示，所以要让脸居中。"
     en: "Cropped to a 1200x1200 square centred on the face, then scaled to 600x600 (only 26KB). The card shows it in a circle, so the face has to be centred."
+
+"f25e0db":
+  tags: [feature, deploy]
+  title:
+    zh: "新增建站时间线页面（就是你现在看的这一页）"
+    en: "Add the build timeline page (the one you are reading)"
+  note:
+    zh: "tools/timeline.mjs 读取博客本地的 git log，再用 git clone --bare --filter=blob:none 拉取简历站的历史（只要提交和文件列表，不下载文件内容），合并成 timeline.json。scripts/timeline.js 提供一个 timeline 标签，把它和手写说明渲染成页面，支持按来源和类型筛选、正序倒序切换。工作流里 checkout 改成 fetch-depth 为 0，否则 CI 拿到的是浅克隆，历史不全。简历站有新提交时，要等博客下一次构建（每天一次，或手动触发）才会出现在这里。"
+    en: "tools/timeline.mjs reads the blog's local git log, then pulls the résumé site's history with git clone --bare --filter=blob:none (commits and file lists only, no file contents) and merges both into timeline.json. scripts/timeline.js adds a timeline tag that renders it together with the hand-written notes, with filtering by source and type and an order toggle. The workflow checkout now uses fetch-depth 0, otherwise CI gets a shallow clone and the history is incomplete. New commits on the résumé site only show up here after the next blog build (daily, or triggered manually)."

@@ -1,6 +1,54 @@
 {
- "generated": "2026-10-23T00:45:44.439Z",
+ "generated": "2026-10-23T00:47:33.282Z",
  "entries": [
+  {
+   "repo": "blog",
+   "hash": "f25e0db896b379af8eb81f655c0d63e2d42206a4",
+   "short": "f25e0db",
+   "date": "2026-10-23T08:47:31+08:00",
+   "subject": "新增建站时间线页面：读取两个仓库的提交记录并附手写说明",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/f25e0db896b379af8eb81f655c0d63e2d42206a4",
+   "files": [
+    {
+     "s": "M",
+     "p": ".github/workflows/pages.yml"
+    },
+    {
+     "s": "M",
+     "p": "_config.redefine.yml"
+    },
+    {
+     "s": "A",
+     "p": "scripts/timeline.js"
+    },
+    {
+     "s": "A",
+     "p": "source/_data/timeline-notes.yml"
+    },
+    {
+     "s": "A",
+     "p": "source/_data/timeline.json"
+    },
+    {
+     "s": "A",
+     "p": "source/css/timeline.css"
+    },
+    {
+     "s": "A",
+     "p": "source/js/timeline.js"
+    },
+    {
+     "s": "A",
+     "p": "source/timeline/index.md"
+    },
+    {
+     "s": "A",
+     "p": "tools/timeline.mjs"
+    }
+   ],
+   "total": 9,
+   "hidden": 0
+  },
   {
    "repo": "blog",
    "hash": "04655a7cf74e39e86d63fc0fbcaf91ab0b126054",
