@@ -13,12 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 建站时间线需要完整的 Git 历史
       - uses: actions/setup-node@v4
         with:
           node-version: "26"
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Refresh build timeline
+        run: node tools/timeline.mjs
       - name: Refresh GitHub contributions
         run: node tools/contributions.mjs ${{ github.repository_owner }}
       - name: Build

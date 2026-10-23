@@ -1,0 +1,497 @@
+{
+ "generated": "2026-10-23T00:45:44.439Z",
+ "entries": [
+  {
+   "repo": "blog",
+   "hash": "04655a7cf74e39e86d63fc0fbcaf91ab0b126054",
+   "short": "04655a7",
+   "date": "2026-10-23T08:41:13+08:00",
+   "subject": "添加第一篇文章的英文版，并建立中英文章配对",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/04655a7cf74e39e86d63fc0fbcaf91ab0b126054",
+   "files": [
+    {
+     "s": "A",
+     "p": "source/_posts/from-dl-env-to-blog-en.md"
+    },
+    {
+     "s": "M",
+     "p": "source/_posts/from-dl-env-to-blog.md"
+    }
+   ],
+   "total": 2,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "8ad14ba852c4302e51069961dafca2e3a8e9bd66",
+   "short": "8ad14ba",
+   "date": "2026-10-23T08:41:13+08:00",
+   "subject": "博客界面中英文切换，并按语言过滤文章列表",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/8ad14ba852c4302e51069961dafca2e3a8e9bd66",
+   "files": [
+    {
+     "s": "M",
+     "p": "_config.redefine.yml"
+    },
+    {
+     "s": "A",
+     "p": "scripts/bilingual.js"
+    },
+    {
+     "s": "A",
+     "p": "source/js/bilingual.js"
+    }
+   ],
+   "total": 3,
+   "hidden": 0
+  },
+  {
+   "repo": "resume",
+   "hash": "451ba942abc38c9fd8454e64d3684a613222825a",
+   "short": "451ba94",
+   "date": "2026-10-23T08:34:56+08:00",
+   "subject": "个人卡片换成本人照片",
+   "url": "https://github.com/qianlong-nie/qianlong-nie.github.io/commit/451ba942abc38c9fd8454e64d3684a613222825a",
+   "files": [
+    {
+     "s": "M",
+     "p": "_data/profile.yml"
+    },
+    {
+     "s": "A",
+     "p": "assets/images/portrait.jpg"
+    },
+    {
+     "s": "D",
+     "p": "assets/images/portrait.png"
+    }
+   ],
+   "total": 3,
+   "hidden": 0
+  },
+  {
+   "repo": "resume",
+   "hash": "b492285fd950f37e507b676d2be459fe83699352",
+   "short": "b492285",
+   "date": "2026-10-23T08:34:01+08:00",
+   "subject": "添加简历 PDF 下载（中英各一份，不含手机号）",
+   "url": "https://github.com/qianlong-nie/qianlong-nie.github.io/commit/b492285fd950f37e507b676d2be459fe83699352",
+   "files": [
+    {
+     "s": "M",
+     "p": "_data/profile.yml"
+    },
+    {
+     "s": "M",
+     "p": "_data/ui.yml"
+    },
+    {
+     "s": "A",
+     "p": "_layouts/cv.html"
+    },
+    {
+     "s": "A",
+     "p": "assets/cv/Qianlong-Nie-CV-en.pdf"
+    },
+    {
+     "s": "A",
+     "p": "assets/cv/Qianlong-Nie-CV-zh.pdf"
+    },
+    {
+     "s": "A",
+     "p": "cv/en.html"
+    },
+    {
+     "s": "A",
+     "p": "cv/zh.html"
+    },
+    {
+     "s": "M",
+     "p": "index.html"
+    },
+    {
+     "s": "A",
+     "p": "tools/build_cv.sh"
+    }
+   ],
+   "total": 9,
+   "hidden": 0
+  },
+  {
+   "repo": "resume",
+   "hash": "a57719ef1e1581faa277aa89806d4fa94b00bcb8",
+   "short": "a57719e",
+   "date": "2026-10-23T02:05:03+08:00",
+   "subject": "初始化学术主页：中英双语、经历与项目页",
+   "url": "https://github.com/qianlong-nie/qianlong-nie.github.io/commit/a57719ef1e1581faa277aa89806d4fa94b00bcb8",
+   "files": [
+    {
+     "s": "A",
+     "p": ".github/workflows/pages.yml"
+    },
+    {
+     "s": "A",
+     "p": ".gitignore"
+    },
+    {
+     "s": "A",
+     "p": "404.html"
+    },
+    {
+     "s": "A",
+     "p": "Gemfile"
+    },
+    {
+     "s": "A",
+     "p": "Gemfile.lock"
+    },
+    {
+     "s": "A",
+     "p": "LICENSE"
+    },
+    {
+     "s": "A",
+     "p": "README.md"
+    },
+    {
+     "s": "A",
+     "p": "_config.yml"
+    },
+    {
+     "s": "A",
+     "p": "_data/experience.yml"
+    },
+    {
+     "s": "A",
+     "p": "_data/footer.yml"
+    },
+    {
+     "s": "A",
+     "p": "_data/navigation.yml"
+    },
+    {
+     "s": "A",
+     "p": "_data/profile.yml"
+    },
+    {
+     "s": "A",
+     "p": "_data/projects.yml"
+    },
+    {
+     "s": "A",
+     "p": "_data/ui.yml"
+    },
+    {
+     "s": "A",
+     "p": "_includes/footer.html"
+    },
+    {
+     "s": "A",
+     "p": "_includes/navbar.html"
+    },
+    {
+     "s": "A",
+     "p": "_includes/t.html"
+    },
+    {
+     "s": "A",
+     "p": "_layouts/default.html"
+    },
+    {
+     "s": "A",
+     "p": "assets/css/global.css"
+    },
+    {
+     "s": "A",
+     "p": "assets/css/images/loading.gif"
+    },
+    {
+     "s": "A",
+     "p": "assets/images/portrait.png"
+    },
+    {
+     "s": "A",
+     "p": "assets/js/common.js"
+    },
+    {
+     "s": "A",
+     "p": "assets/js/lang.js"
+    },
+    {
+     "s": "A",
+     "p": "experience.html"
+    },
+    {
+     "s": "A",
+     "p": "index.html"
+    },
+    {
+     "s": "A",
+     "p": "projects.html"
+    },
+    {
+     "s": "A",
+     "p": "tools/check_i18n.rb"
+    }
+   ],
+   "total": 27,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "c718606139b506eba6223d05d26c3d4c143f92be",
+   "short": "c718606",
+   "date": "2026-10-22T19:54:51+08:00",
+   "subject": "发布第一篇文章，移除示例文章 hello-world",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/c718606139b506eba6223d05d26c3d4c143f92be",
+   "files": [
+    {
+     "s": "A",
+     "p": "source/_posts/from-dl-env-to-blog.md"
+    },
+    {
+     "s": "D",
+     "p": "source/_posts/hello-world.md"
+    }
+   ],
+   "total": 2,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "d2b0fccfc27c4b19ad4a13c422fa93aaabaf1ec4",
+   "short": "d2b0fcc",
+   "date": "2026-10-22T19:54:51+08:00",
+   "subject": "首页添加 GitHub 贡献日历，并每日定时重建",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/d2b0fccfc27c4b19ad4a13c422fa93aaabaf1ec4",
+   "files": [
+    {
+     "s": "M",
+     "p": ".github/workflows/pages.yml"
+    },
+    {
+     "s": "M",
+     "p": "package.json"
+    },
+    {
+     "s": "A",
+     "p": "scripts/contributions.js"
+    },
+    {
+     "s": "A",
+     "p": "source/_data/contributions.json"
+    },
+    {
+     "s": "A",
+     "p": "tools/contributions.mjs"
+    }
+   ],
+   "total": 5,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "88a0dafcd1ef58a99fedfe0e15abb4688f9e1c87",
+   "short": "88a0daf",
+   "date": "2026-10-22T19:23:58+08:00",
+   "subject": "设置头像和站点图标",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/88a0dafcd1ef58a99fedfe0e15abb4688f9e1c87",
+   "files": [
+    {
+     "s": "M",
+     "p": "_config.redefine.yml"
+    },
+    {
+     "s": "A",
+     "p": "source/images/avatar.png"
+    },
+    {
+     "s": "A",
+     "p": "source/images/favicon.png"
+    }
+   ],
+   "total": 3,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "7a6f5f2e9d01b923d2908deec81bec86a4a79c94",
+   "short": "7a6f5f2",
+   "date": "2026-10-22T19:15:49+08:00",
+   "subject": "接入首页背景视频，清理主题模板默认信息",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/7a6f5f2e9d01b923d2908deec81bec86a4a79c94",
+   "files": [
+    {
+     "s": "M",
+     "p": "_config.redefine.yml"
+    },
+    {
+     "s": "A",
+     "p": "scripts/banner-video.js"
+    },
+    {
+     "s": "A",
+     "p": "source/images/banner-poster.jpg"
+    },
+    {
+     "s": "A",
+     "p": "source/videos/banner.mp4"
+    }
+   ],
+   "total": 4,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "1890a21dabb27d87444427a36c0f5e3804ca9afb",
+   "short": "1890a21",
+   "date": "2026-10-20T16:56:26+08:00",
+   "subject": "启用导航栏 Archives 和 About 菜单",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/1890a21dabb27d87444427a36c0f5e3804ca9afb",
+   "files": [
+    {
+     "s": "M",
+     "p": "_config.redefine.yml"
+    }
+   ],
+   "total": 1,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "5f057e21820621f42d1f9ee1c5fffea6fd1acd55",
+   "short": "5f057e2",
+   "date": "2026-10-20T16:55:15+08:00",
+   "subject": "设置作者名并停止跟踪 db.json",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/5f057e21820621f42d1f9ee1c5fffea6fd1acd55",
+   "files": [
+    {
+     "s": "M",
+     "p": "_config.redefine.yml"
+    },
+    {
+     "s": "D",
+     "p": "db.json"
+    }
+   ],
+   "total": 2,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "79e9a1531fb4bce599da22cfea04507746cb1398",
+   "short": "79e9a15",
+   "date": "2026-10-20T16:47:22+08:00",
+   "subject": "更新站点标题和首页横幅标题",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/79e9a1531fb4bce599da22cfea04507746cb1398",
+   "files": [
+    {
+     "s": "M",
+     "p": "_config.redefine.yml"
+    }
+   ],
+   "total": 1,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "95df72ac372ae8fc77bf16364d48b40ffcce593c",
+   "short": "95df72a",
+   "date": "2026-10-20T15:13:19+08:00",
+   "subject": "更新主题配置",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/95df72ac372ae8fc77bf16364d48b40ffcce593c",
+   "files": [
+    {
+     "s": "M",
+     "p": "_config.redefine.yml"
+    },
+    {
+     "s": "M",
+     "p": "_config.yml"
+    }
+   ],
+   "total": 2,
+   "hidden": 0
+  },
+  {
+   "repo": "blog",
+   "hash": "c09121b8a2d89c17ba7db690c1ee72a240775b2d",
+   "short": "c09121b",
+   "date": "2026-10-20T14:48:54+08:00",
+   "subject": "Add .gitignore and remove node_modules",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/c09121b8a2d89c17ba7db690c1ee72a240775b2d",
+   "files": [
+    {
+     "s": "A",
+     "p": ".gitignore"
+    }
+   ],
+   "total": 7262,
+   "hidden": 7261
+  },
+  {
+   "repo": "blog",
+   "hash": "fc8d51d4a8c757f83cc0518495c0d4d16865c1b1",
+   "short": "fc8d51d",
+   "date": "2026-10-20T14:33:38+08:00",
+   "subject": "Initial blog with Hexo and Redefine",
+   "url": "https://github.com/jizhe-nie/jizhe-nie.github.io/commit/fc8d51d4a8c757f83cc0518495c0d4d16865c1b1",
+   "files": [
+    {
+     "s": "A",
+     "p": ".github/dependabot.yml"
+    },
+    {
+     "s": "A",
+     "p": ".github/workflows/pages.yml"
+    },
+    {
+     "s": "A",
+     "p": "_config.landscape.yml"
+    },
+    {
+     "s": "A",
+     "p": "_config.redefine.yml"
+    },
+    {
+     "s": "A",
+     "p": "_config.yml"
+    },
+    {
+     "s": "A",
+     "p": "db.json"
+    },
+    {
+     "s": "A",
+     "p": "package-lock.json"
+    },
+    {
+     "s": "A",
+     "p": "package.json"
+    },
+    {
+     "s": "A",
+     "p": "scaffolds/draft.md"
+    },
+    {
+     "s": "A",
+     "p": "scaffolds/page.md"
+    },
+    {
+     "s": "A",
+     "p": "scaffolds/post.md"
+    },
+    {
+     "s": "A",
+     "p": "source/_posts/hello-world.md"
+    },
+    {
+     "s": "A",
+     "p": "themes/.gitkeep"
+    }
+   ],
+   "total": 7274,
+   "hidden": 7261
+  }
+ ]
+}

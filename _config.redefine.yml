@@ -217,6 +217,9 @@ navbar:
     Archives: 
       path: /archives 
       icon: fa-regular fa-archive # can be empty
+    "[[时间线|Timeline]]":
+      path: /timeline
+      icon: fa-regular fa-clock-rotate-left
     # Status: 
     #   path: https://status.ohevan.com/
     #   icon: fa-regular fa-chart-bar

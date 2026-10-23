@@ -1,0 +1,144 @@
+# 建站时间线的手写说明：Git 记录只能说明"改了什么"，这里补"为什么这么改、踩了什么坑"。
+# 键是提交的前 7 位哈希（必须加引号，否则纯数字的哈希会被当成数字）。
+# tags 可选：setup 搭建 / deploy 部署 / appearance 外观 / feature 功能 / fix 排错 / content 内容
+# title、note 都是 zh / en 两份；没写 title 时用提交标题，没写 note 时不显示说明。
+# 注意：文字里不要出现英文竖线和方括号，字符串里需要双引号时用单引号代替。
+
+# ---------------- 博客 jizhe-nie.github.io ----------------
+
+"fc8d51d":
+  tags: [setup, deploy]
+  title:
+    zh: "初始化博客：Hexo + Redefine + 自动部署"
+    en: "Initial blog: Hexo + Redefine + auto deploy"
+  note:
+    zh: "用 hexo init 创建站点，安装 Redefine 主题，并写好 GitHub Actions 工作流：push 到 main 后自动安装依赖、构建、发布到 GitHub Pages。别忘了在仓库 Settings 的 Pages 里把 Source 设为 GitHub Actions。这次提交还误带上了整个 node_modules，下一条修复。"
+    en: "Created the site with hexo init, installed the Redefine theme and wrote a GitHub Actions workflow: every push to main installs dependencies, builds and publishes to GitHub Pages. Remember to set the Pages source to GitHub Actions in the repository settings. This commit also included node_modules by mistake, fixed in the next one."
+
+"c09121b":
+  tags: [fix, setup]
+  title:
+    zh: "补上 .gitignore，移除误提交的 node_modules"
+    en: "Add .gitignore and remove node_modules"
+  note:
+    zh: "hexo init 不会生成 .gitignore，首次推送上传了 7000 多个对象、17MB。补上 .gitignore 后，还要用 git rm --cached 把已跟踪的文件摘掉，因为 .gitignore 只对还没被跟踪的文件生效。依赖不用进仓库，Actions 会按 package.json 重新安装。"
+    en: "hexo init does not create a .gitignore, so the first push uploaded more than 7,000 objects (17MB). After adding .gitignore the tracked files must also be removed with git rm --cached, because .gitignore only affects files that are not tracked yet. Dependencies do not belong in the repository; Actions reinstalls them from package.json."
+
+"95df72a":
+  tags: [appearance, fix]
+  title:
+    zh: "修改基础信息和主题外观（当时线上没变化）"
+    en: "Change basic info and theme settings (live site unchanged)"
+  note:
+    zh: "这次改完推送后网页没有变化。原因有两个：改的是被 # 注释掉的导航示例，注释的行不生效；Redefine 的标题读的是 _config.redefine.yml 里的 info.title，而不是根目录 _config.yml 的 title。见下一条。"
+    en: "After this push the page did not change. Two causes: the edited lines were navigation examples commented out with #, which have no effect; and Redefine reads its title from info.title in _config.redefine.yml, not from title in the root _config.yml. See the next entry."
+
+"79e9a15":
+  tags: [fix, appearance]
+  title:
+    zh: "把站点标题改成 Jizhe's Blog（找到配置不生效的原因）"
+    en: "Set the site title to Jizhe's Blog (root cause found)"
+  note:
+    zh: "同时改了 info.title 和 home_banner.title。另外 GitHub Pages 给页面设置了 10 分钟缓存，部署完刚刷新可能还是旧页面，用 Cmd+Shift+R 强制刷新。副标题如果留空，主题会回退到它自己的默认广告语，所以要写上自己的。"
+    en: "Changed both info.title and home_banner.title. GitHub Pages also serves pages with a 10-minute cache, so right after a deploy you may still see the old page; force a refresh with Cmd+Shift+R. If the subtitle is left empty the theme falls back to its own default tagline, so write your own."
+
+"5f057e2":
+  tags: [setup, fix]
+  title:
+    zh: "设置作者名，停止跟踪 db.json"
+    en: "Set the author name and stop tracking db.json"
+  note:
+    zh: "db.json 是 Hexo 的缓存文件，已经写在 .gitignore 里，却因为早先被提交过而一直被跟踪，导致 git status 总显示它有改动。用 git rm --cached db.json 摘掉后恢复正常，本地文件不受影响。"
+    en: "db.json is a Hexo cache file. It was listed in .gitignore but had been committed earlier, so it stayed tracked and git status kept showing it as modified. git rm --cached db.json fixed that and the local file is untouched."
+
+"1890a21":
+  tags: [appearance]
+  title:
+    zh: "启用导航栏 Archives 和 About 菜单"
+    en: "Enable the Archives and About navbar items"
+  note:
+    zh: "取消注释即可启用。About 下拉里只留了 Me（指向简历站）和 Github，去掉了主题作者的外链和还不存在的 Friends 页面，避免点出 404。"
+    en: "Enabled by uncommenting. The About dropdown keeps only Me (the resume site) and Github; the theme author's external link and the not-yet-existing Friends page were removed to avoid 404s."
+
+"7a6f5f2":
+  tags: [feature, appearance]
+  title:
+    zh: "首页背景视频，并清理模板默认信息"
+    en: "Home page video background, and template cleanup"
+  note:
+    zh: "Redefine 的横幅只支持图片，所以写了 scripts/banner-video.js：Hexo 会自动加载 scripts 目录，在生成页面时往横幅里插入 video，不改主题源码。172MB 的 4K 原视频用 ffmpeg 压到 4MB。手机端和系统开启减少动态效果时只显示封面图。同时把主题的默认网址、页脚起始日期改掉，并关闭了指向假地址的评论区。"
+    en: "Redefine's banner only supports images, so scripts/banner-video.js was added: Hexo loads everything in scripts automatically and the script inserts a video into the banner at build time, without touching the theme source. The 172MB 4K source video was compressed to 4MB with ffmpeg. Phones and reduced-motion settings only show the poster image. The theme's default URL and footer start date were replaced and the comment box, which pointed to a dummy address, was turned off."
+
+"88a0daf":
+  tags: [appearance]
+  title:
+    zh: "设置头像和站点图标"
+    en: "Set the avatar and site icon"
+  note:
+    zh: "原图是 iPhone 导出的 HEIC，浏览器不支持，先用 macOS 自带的 sips 转成 PNG，再用 ffmpeg 缩成 512 的头像和 128 的图标。本机的 ffmpeg 没有 WebP 编码器，所以用的是 PNG。"
+    en: "The source image was an iPhone HEIC, which browsers cannot display. It was converted to PNG with the built-in macOS sips tool, then scaled with ffmpeg to a 512px avatar and a 128px icon. This ffmpeg build has no WebP encoder, so PNG was used."
+
+"d2b0fcc":
+  tags: [feature, deploy]
+  title:
+    zh: "首页加 GitHub 贡献日历，并每天定时重建"
+    en: "GitHub contribution calendar on the home page, rebuilt daily"
+  note:
+    zh: "tools/contributions.mjs 抓取 GitHub 公开的贡献数据，scripts/contributions.js 在构建时画成内联 SVG（内联才能跟随深色模式换色）。工作流里加了每天一次的定时触发和手动触发。抓取失败时只打印警告并保留旧数据，不会让整个构建失败。"
+    en: "tools/contributions.mjs fetches GitHub's public contribution data and scripts/contributions.js draws it as an inline SVG at build time (inline so the colors can follow dark mode). The workflow gained a daily schedule and a manual trigger. If the fetch fails it only warns and keeps the old data, so the build never breaks."
+
+"c718606":
+  tags: [content]
+  title:
+    zh: "发布第一篇文章，删除示例文章"
+    en: "Publish the first post, remove the sample post"
+  note:
+    zh: "注意：博客没有任何文章时 Hexo 不会生成首页 index.html，首页会 404。所以示例文章要等第一篇真正的文章写好之后才能删。文章里的服务器地址、用户名都用了占位符。"
+    en: "Note: when a blog has no posts Hexo does not generate the home page index.html and the home page returns 404, so the sample post can only be deleted once the first real post exists. Server addresses and usernames in the post are placeholders."
+
+"8ad14ba":
+  tags: [feature]
+  title:
+    zh: "博客界面中英文切换"
+    en: "Bilingual interface with a language switch"
+  note:
+    zh: "不改主题源码：在 scripts 里包装模板的 __() 翻译函数，让它同时输出中英两份，再由 html 的 data-lang 决定显示哪份。配置里的自定义文字用双方括号加竖线的写法。主题自带的页脚翻译里带 SVG 图标，会和简单标记冲突，所以内部改用私有区字符做标记。还关掉了主题的 single_page（无刷新切换），否则语言跳转和标题更新会失效。"
+    en: "No theme source changes: a script wraps the template's __() translation helper so it returns both languages, and the data-lang attribute on html decides which one is shown. Custom text in the config uses a double-bracket-and-pipe syntax. The theme's footer translation contains an SVG icon that clashed with the simple marker, so the internal marker uses private-use characters. The theme's single_page option was turned off, otherwise language redirects and title updates break."
+
+"04655a7":
+  tags: [content, feature]
+  title:
+    zh: "第一篇文章的英文版，以及中英文章配对"
+    en: "English version of the first post, and post pairing"
+  note:
+    zh: "中英文各写一篇，front-matter 里用 post_lang 和 translation 互相指向。列表里只显示当前语言那一篇，在文章页切换语言会跳到对应版本。排查过一个 bug：归档页把同一天的文章放在同一个 li 里，隐藏中文那篇时把英文那篇也一起藏了，改成只隐藏链接本身。"
+    en: "One post per language, pointing at each other through post_lang and translation in the front matter. Lists show only the post in the current language, and switching language on a post page jumps to its counterpart. A bug was found and fixed: the archive page puts posts of the same day in a single li, so hiding the Chinese post also hid the English one; now only the link itself is hidden."
+
+# ---------------- 简历站 qianlong-nie.github.io ----------------
+
+"a57719e":
+  tags: [setup, feature]
+  title:
+    zh: "初始化学术主页（中英双语）"
+    en: "Initialize the academic homepage (bilingual)"
+  note:
+    zh: "基于 luost26/academic-homepage（Jekyll，MIT 许可证）。系统自带的 Ruby 2.6 太旧，改用 Homebrew 的 Ruby 4；Ruby 3.4 以后不再自带 base64 等库，要在 Gemfile 里补上。模板依赖的插件不被 GitHub 自带的 Jekyll 部署支持，所以改用 Actions 构建。所有文字写成中英两份，用按钮切换。YAML 行内写法里不加引号的英文遇到逗号会被截断，为此写了 tools/check_i18n.rb 检查脚本。"
+    en: "Based on luost26/academic-homepage (Jekyll, MIT license). The system Ruby 2.6 is too old so Homebrew's Ruby 4 is used; Ruby 3.4 no longer bundles base64 and similar libraries, so they were added to the Gemfile. The template's plugin is not supported by GitHub's built-in Jekyll deployment, so Actions builds it instead. All text is written in two languages with a toggle button. In inline YAML maps an unquoted English value is cut at the first comma, which is why tools/check_i18n.rb was written."
+
+"b492285":
+  tags: [feature, content]
+  title:
+    zh: "简历 PDF 下载（中英各一份，不含手机号）"
+    en: "Downloadable CV PDFs (Chinese and English, no phone number)"
+  note:
+    zh: "没有直接用原来的 PDF，因为里面有手机号，很难干净地删掉。改为写一个专门打印的排版页，直接读取 _data 里的同一份数据，再用无头 Chrome 导出成单页 A4 的 PDF。网页和 PDF 永远是同一份数据。改了内容后运行 tools/build_cv.sh 重新生成。"
+    en: "The original PDF was not reused because it contains a phone number that is hard to remove cleanly. Instead a print-only layout page reads the same data files and headless Chrome exports it as a one-page A4 PDF, so the website and the PDF always share one source. After editing content, run tools/build_cv.sh to regenerate."
+
+"451ba94":
+  tags: [appearance]
+  title:
+    zh: "个人卡片换成本人照片"
+    en: "Use my own photo on the profile card"
+  note:
+    zh: "以脸为中心裁成 1200x1200 的正方形，再缩到 600x600，只有 26KB。卡片里是圆形显示，所以要让脸居中。"
+    en: "Cropped to a 1200x1200 square centred on the face, then scaled to 600x600 (only 26KB). The card shows it in a circle, so the face has to be centred."
