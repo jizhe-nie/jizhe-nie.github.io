@@ -44,15 +44,23 @@ function render(data) {
   return `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="GitHub contribution calendar">${months.join('')}${weekdays}${rects}</svg>`;
 }
 
+// 配色直接取自 GitHub 个人主页当前实际使用的值（浅色 / 深色各一套），
+// 用 CSS 变量，深色模式时由 html.dark 切换
 const style = `<style>
-.gh-contrib{margin:20px auto 0;max-width:1000px;padding:16px 20px;border-radius:14px;background:var(--background-color-transparent-80,rgba(255,255,255,.8))}
-.gh-contrib h3{margin:0 0 10px;font-size:15px;font-weight:600}
+.gh-contrib{--gh-0:#eff2f5;--gh-1:#aceebb;--gh-2:#4ac26b;--gh-3:#2da44e;--gh-4:#116329;--gh-edge:rgba(31,35,40,.06);
+  margin:20px auto 0;max-width:1000px;padding:16px 20px;border-radius:14px;background:var(--background-color-transparent-80,rgba(255,255,255,.8))}
+html.dark .gh-contrib{--gh-0:#151b23;--gh-1:#033a16;--gh-2:#196c2e;--gh-3:#2ea043;--gh-4:#56d364;--gh-edge:rgba(255,255,255,.05)}
+.gh-contrib{color:var(--default-text-color)}
+.gh-contrib h3{margin:0 0 10px;font-size:15px;font-weight:600;color:var(--first-text-color,inherit)}
 .gh-contrib h3 a{color:inherit;text-decoration:none}
 .gh-contrib .gh-updated{font-weight:400;font-size:12px;opacity:.7}
 .gh-contrib .gh-scroll{overflow-x:auto}
 .gh-contrib svg{display:block;min-width:700px;width:100%;height:auto;font-size:9px;fill:currentColor;opacity:.95}
-.gh-l0{fill:#ebedf0}.gh-l1{fill:#9be9a8}.gh-l2{fill:#40c463}.gh-l3{fill:#30a14e}.gh-l4{fill:#216e39}
-html.dark .gh-l0{fill:#2d333b}html.dark .gh-l1{fill:#0e4429}html.dark .gh-l2{fill:#006d32}html.dark .gh-l3{fill:#26a641}html.dark .gh-l4{fill:#39d353}
+.gh-contrib svg rect{stroke:var(--gh-edge);stroke-width:1}
+.gh-l0{fill:var(--gh-0)}.gh-l1{fill:var(--gh-1)}.gh-l2{fill:var(--gh-2)}.gh-l3{fill:var(--gh-3)}.gh-l4{fill:var(--gh-4)}
+.gh-legend{display:flex;align-items:center;justify-content:flex-end;gap:4px;margin-top:6px;font-size:12px;opacity:.8}
+.gh-legend i{display:inline-block;width:11px;height:11px;border-radius:2px;outline:1px solid var(--gh-edge);outline-offset:-1px}
+.gh-legend i:nth-of-type(1){background:var(--gh-0)}.gh-legend i:nth-of-type(2){background:var(--gh-1)}.gh-legend i:nth-of-type(3){background:var(--gh-2)}.gh-legend i:nth-of-type(4){background:var(--gh-3)}.gh-legend i:nth-of-type(5){background:var(--gh-4)}
 </style>`;
 
 hexo.extend.filter.register('after_render:html', (html) => {
@@ -66,7 +74,7 @@ hexo.extend.filter.register('after_render:html', (html) => {
   const title = `<a href="https://github.com/${data.user}" target="_blank" rel="noopener">${bi('GitHub 贡献日历', 'GitHub Contributions')}</a>`
     + ` · ${bi(`过去一年 ${data.total} 次贡献`, `${data.total} contributions in the last year`)}`
     + `<span class="gh-updated"> · ${bi(`数据更新于 ${updated}`, `updated ${updated}`)}</span>`;
-  const block = `<div class="gh-contrib"><h3>${title}</h3><div class="gh-scroll">${render(data)}</div></div>`;
+  const block = `<div class="gh-contrib"><h3>${title}</h3><div class="gh-scroll">${render(data)}</div><div class="gh-legend">${bi('少', 'Less')}<i></i><i></i><i></i><i></i><i></i>${bi('多', 'More')}</div></div>`;
   return html
     .replace('<div class="main-content-footer">', `${block}<div class="main-content-footer">`)
     .replace('</head>', `${style}</head>`);
