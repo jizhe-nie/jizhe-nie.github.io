@@ -11,7 +11,7 @@
 # Docs: https://redefine-docs.ohevan.com/basic/info
 info:
   # Site title
-  title: Jizhe's Blog
+  title: "[[濟哲的博客|Jizhe's Blog]]"
   # Site subtitle
   subtitle: "[[学习与项目开发记录|Learning and Project Notes]]"
   # Author name
@@ -134,7 +134,7 @@ home_banner:
     light: /images/banner-poster.jpg # light mode
     dark: /images/banner-poster.jpg # dark mode
   # Home banner title
-  title: Jizhe's Blog
+  title: "[[濟哲的博客|Jizhe's Blog]]"
   # Home banner subtitle
   subtitle:
     text: [] # subtitle text, array
