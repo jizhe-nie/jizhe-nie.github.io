@@ -161,3 +161,13 @@
   note:
     zh: "标题用双语写法，中文显示濟哲的博客，英文仍是 Jizhe's Blog。新增 scripts/posts-json.js，构建时生成 posts.json（标题、链接、日期、语言、对应译文），给 GitHub 个人主页的 README 抓取最新文章用。没有安装 RSS 插件，是因为中英文章配对后，RSS 会把两个语言的同一篇文章都列出来，用自己的 JSON 可以按语言分组。"
     en: "The title uses the bilingual syntax: Chinese shows 濟哲的博客 while English stays Jizhe's Blog. scripts/posts-json.js was added to generate posts.json at build time (title, link, date, language, counterpart), which the GitHub profile README fetches to list the latest posts. No RSS plugin was installed because with paired posts an RSS feed would list both language versions of the same article; a custom JSON file lets them be grouped by language."
+
+post:blogpub-ai-publish-tool:
+  tags:
+  - content
+  title:
+    zh: 发布新文章：我做了个 AI 一键发布博客的工具 blogpub
+    en: 'New post: I Built blogpub: A One-Command AI Publishing Tool for My Blog'
+  note:
+    zh: 我的博客用 Hexo 加 Redefine 主题，博客和简历站都是中英双语的。每发一篇文章都要手动做一长串事：写 Markdown 和 front-matter、压缩图片、再写一遍英文版、本地预览、git 提交推送，还要往建站时间线里补一条记录。我想只把大致的内容和图片交给一个工具，它整理成文章，我预览确认后一条命令发布。这个工具就是 blogpub，已经开源在 https://github.com/jizhe-nie/blogpub…
+    en: 'My blog runs on Hexo with the Redefine theme, and both the blog and my resume site are bilingual. Every post meant a long manual checklist: write the Markdown and front-matter, compress images, write the English version…'
